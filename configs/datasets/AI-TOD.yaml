@@ -1,0 +1,14 @@
+# Update paths/names if your AI-TOD conversion uses a different layout.
+path: datasets/AI-TOD-YOLO
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: airplane
+  1: bridge
+  2: storage-tank
+  3: ship
+  4: swimming-pool
+  5: vehicle
+  6: person
+  7: wind-mill

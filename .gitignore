@@ -7,7 +7,7 @@ venv/
 .idea/
 .vscode/
 runs/
-datasets/
+/datasets/
 *.pt
 *.pth
 *.onnx
