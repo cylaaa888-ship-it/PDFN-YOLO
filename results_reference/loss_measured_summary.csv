@@ -1,0 +1,3 @@
+model,window_epochs,box_loss_mean,box_loss_sd,cls_loss_mean,cls_loss_sd,dfl_loss_mean,dfl_loss_sd
+YOLO11s,20,1.47,0.03,0.89,0.02,0.97,0.02
+PDFN,20,1.40,0.03,0.83,0.02,0.93,0.02

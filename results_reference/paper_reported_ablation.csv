@@ -1,0 +1,12 @@
+no,configuration,mAP50,mAP50_95,APsmall,params_M,GFLOPs,description
+(a),Baseline,39.6,23.7,23.9,9.4,21.5,YOLO11s baseline
+(b),Baseline + RFM-C3k2,39.9,23.9,24.3,9.2,21.6,Local backbone enhancement
+(c),Baseline + MSPC,39.7,23.8,24.1,9.1,21.5,High-level context enhancement
+(d),Baseline + RFM-C3k2 + MSPC,40.4,24.2,24.7,9.0,21.6,Complete backbone enhancement
+(e),Baseline + DFRM,40.3,24.1,24.6,9.2,21.6,Dynamic weights
+(f),Baseline + SACM,40.0,23.9,24.4,9.1,21.6,Post-fusion calibration
+(g),Baseline + DFRM + SACM,40.9,24.6,25.2,9.1,21.7,Complete neck enhancement
+(h),Baseline + SAD-Head,39.8,23.8,24.2,9.0,21.6,Scale-aware prediction
+(i),Baseline + Backbone + Neck,41.9,25.3,25.8,8.9,21.8,Backbone + neck
+(j),Baseline + Neck + SAD-Head,41.6,25.1,25.6,8.9,21.8,Neck + head
+(k),PDFN complete model,42.8,25.9,26.4,8.9,21.8,Full three-stage model

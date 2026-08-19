@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "PDFN-YOLO11s for UAV Small Object Detection"
+message: "If you use this code, please cite the associated manuscript."
+type: software
+authors:
+  - family-names: Liu
+    given-names: Yunchuan
+    orcid: "https://orcid.org/0009-0002-2122-1796"
+  - family-names: Geng
+    given-names: Zhiqing
+    orcid: "https://orcid.org/0009-0007-6211-4352"
+  - family-names: Liu
+    given-names: Zhen
+version: 0.2.0
+license: AGPL-3.0-or-later
+repository-code: "https://github.com/cylaaa888-ship-it/pdfn"

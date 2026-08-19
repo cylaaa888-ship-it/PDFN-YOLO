@@ -1,0 +1,175 @@
+# PDFN YOLO11s paper-aligned implementation
+# Paper: A Full-Link Progressive Dynamic Enhancement Network for UAV Small Object Detection
+
+nc: 10
+scale: s
+scales:
+  n:
+  - 0.5
+  - 0.25
+  - 1024
+  s:
+  - 0.5
+  - 0.5
+  - 1024
+  m:
+  - 0.5
+  - 1.0
+  - 512
+  l:
+  - 1.0
+  - 1.0
+  - 512
+  x:
+  - 1.0
+  - 1.5
+  - 512
+backbone:
+- - -1
+  - 1
+  - Conv
+  - - 64
+    - 3
+    - 2
+- - -1
+  - 1
+  - Conv
+  - - 128
+    - 3
+    - 2
+- - -1
+  - 2
+  - RFMC3k2
+  - - 256
+    - false
+    - 0.25
+- - -1
+  - 1
+  - Conv
+  - - 256
+    - 3
+    - 2
+- - -1
+  - 2
+  - RFMC3k2
+  - - 512
+    - false
+    - 0.25
+- - -1
+  - 1
+  - Conv
+  - - 512
+    - 3
+    - 2
+- - -1
+  - 2
+  - RFMC3k2
+  - - 512
+    - true
+- - -1
+  - 1
+  - Conv
+  - - 1024
+    - 3
+    - 2
+- - -1
+  - 2
+  - RFMC3k2
+  - - 1024
+    - true
+- - -1
+  - 1
+  - MSPC
+  - - 1024
+    - 0.25
+- - -1
+  - 2
+  - C2PSA
+  - - 1024
+head:
+- - -1
+  - 1
+  - nn.Upsample
+  - - null
+    - 2
+    - nearest
+- - - 6
+    - -1
+  - 1
+  - DFRM
+  - - 512
+- - -1
+  - 1
+  - SACM
+  - []
+- - -1
+  - 2
+  - C3k2
+  - - 512
+    - false
+- - -1
+  - 1
+  - nn.Upsample
+  - - null
+    - 2
+    - nearest
+- - - 4
+    - -1
+  - 1
+  - DFRM
+  - - 256
+- - -1
+  - 1
+  - SACM
+  - []
+- - -1
+  - 2
+  - C3k2
+  - - 256
+    - false
+- - -1
+  - 1
+  - Conv
+  - - 256
+    - 3
+    - 2
+- - - -1
+    - 14
+  - 1
+  - DFRM
+  - - 512
+- - -1
+  - 1
+  - SACM
+  - []
+- - -1
+  - 2
+  - C3k2
+  - - 512
+    - false
+- - -1
+  - 1
+  - Conv
+  - - 512
+    - 3
+    - 2
+- - - -1
+    - 10
+  - 1
+  - DFRM
+  - - 1024
+- - -1
+  - 1
+  - SACM
+  - []
+- - -1
+  - 2
+  - C3k2
+  - - 1024
+    - true
+- - - 18
+    - 22
+    - 26
+  - 1
+  - SADDetect
+  - - nc
